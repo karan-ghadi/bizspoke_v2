@@ -1,3 +1,6 @@
+h1{
+	transition: all 0.2s;
+}
 #section_one, .first-parallax{
   background: url('../src/assets/images/background/background-section-one.png') no-repeat 50% 50%;
   background-size: cover;

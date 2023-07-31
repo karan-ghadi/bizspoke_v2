@@ -1,4 +1,4 @@
-# Bizspoke website.
+# BIZSPOKE website.
 
 Clone the repository =>
 ### `git clone https://github.com/karan-ghadi/bizspoke_v2.git`

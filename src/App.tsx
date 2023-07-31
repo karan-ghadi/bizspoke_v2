@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef } from 'react';
+import React, { Fragment, useEffect, useRef, useLayoutEffect } from 'react';
 import './App.css';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -28,10 +28,17 @@ import uniqueCorporateEventsBlock from './../src/assets/images/section-four/uniq
 
 import sportMusicExperienceBlock from './../src/assets/images/section-four/sport-music-experience-block.jpg';
 
-import sectionEdgeImgA from './../src/assets/images/section-edge-img-a.jpg';
 import sectionTwoBottom from './../src/assets/images/section-two/image-center-bottom.jpg';
 import sectionThreeLeft from './../src/assets/images/section-two/image-left-top.jpg';
 import sectionThreeRight from './../src/assets/images/section-two/image-right-top.jpg';
+
+
+import sectionFourImageOne from './../src/assets/images/s4-image-one.jpg';
+import sectionFourImageTwo from './../src/assets/images/s4-image-two.jpg';
+import sectionFourImageThree from './../src/assets/images/s4-image-three.jpg';
+import sectionFourImageFour from './../src/assets/images/s4-image-four.jpg';
+import sectionFourImageFive from './../src/assets/images/s4-image-five.jpg';
+import sectionFourImageSix from './../src/assets/images/s4-image-six.jpg';
 
 
 
@@ -43,6 +50,7 @@ function App() {
 	gsap.registerPlugin(ScrollTrigger);
 	const ref = useRef(null);
 
+
 	useEffect(() => {
 		const parralaxes: any = document.querySelectorAll('.parralax');
 		window.addEventListener('scroll', function () {
@@ -53,242 +61,279 @@ function App() {
 		})
 	});
 
+	useLayoutEffect(() => {
+		const element: any = ref.current;
+		gsap
+			.timeline()
+			.to(
+				element.querySelector(".text-e"), {
+				opacity:0,
+				display:'none',
+				ease: "none",
+				yoyo: true,
+				delay: 1,
+				duration: 0.1
+			}
+			)
+			.fromTo(
+				element.querySelector(".text-i"), {
+				opacity: 0,
+			}, {
+				opacity: 1,
+				display:'inline-block',
+				ease: "none",
+				duration: 0.3
+			}
+			)
+			.fromTo(
+				element.querySelector(".text-z"), {
+					opacity: 0,
+			}, {
+				opacity: 1,
+				display:'inline-block',
+				ease: "none",
+				duration: 0.3
+			}
+			);
+	}, [])
 
 	useEffect(() => {
-		const element: any = ref.current;
+		if (window.innerWidth > 767) {
+			const element: any = ref.current;
 
-		// Section One Animations
-		gsap.to(".first-paragraph", {
-			yPercent: 50,
-			opacity: 0,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector("#section_one"),
-				start: "top top", // the default values
-				// end: "bottom top",
-				scrub: true,
-			},
-		});
-		gsap.to(
-			element.querySelector(".ring-left"), {
-			xPercent: -150,
-			opacity: 0.5,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector("#section_one"),
-				start: "top top", // the default values
-				// end: "bottom top",
-				scrub: true,
-			},
+			// Section One Animations
+			gsap.to(".first-paragraph", {
+				yPercent: 50,
+				opacity: 0,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector("#section_one"),
+					start: "top top", // the default values
+					// end: "bottom top",
+					scrub: true,
+				},
+			});
+			gsap.to(
+				element.querySelector(".ring-left"), {
+				xPercent: -150,
+				opacity: 0.5,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector("#section_one"),
+					start: "top bottom", // the default values
+					// end: "bottom top",
+					scrub: true,
+				},
+			}
+			)
+			gsap.to(
+				element.querySelector(".ring-right"), {
+				xPercent: 150,
+				opacity: 0.5,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector("#section_one"),
+					start: "top top", // the default values
+					// end: "bottom top",
+					scrub: true,
+				},
+			}
+			);
+
+
+			// Section Two Animations
+			gsap.to(".section-two-head-text", {
+				yPercent: -40,
+				opacity: 1,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector(".section-two-head-text"),
+					start: "top bottom", // the default values
+					// end: "bottom top",
+					scrub: true
+				},
+			});
+			gsap.to(".section-two-anchor", {
+				yPercent: -60,
+				opacity: 1,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector(".section-two-head-text"),
+					start: "top bottom", // the default values
+					// end: "bottom top",
+					scrub: true
+				},
+			});
+			gsap.to(".section_two-top-left", {
+				yPercent: -60,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector("#section_two"),
+					start: "top bottom", // the default values
+					// end: "bottom top",
+					scrub: true
+				},
+			});
+
+
+			// Section Three Animations
+			gsap.to(".section_three_text", {
+				yPercent: 40,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector(".section_three_text"),
+					start: "top center", // the default values
+					// end: "bottom top",
+					scrub: true
+				},
+			});
+			gsap.to(".section_three-top-right", {
+				yPercent: 60,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector("#section_three"),
+					start: "top bottom", // the default values
+					// end: "bottom top",
+					scrub: true
+				},
+			});
+			gsap.to(".section_three-center-bottom", {
+				yPercent: -35,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector("#section_three"),
+					start: "top bottom", // the default values
+					// end: "bottom top",
+					scrub: true
+				},
+			});
+
+			// Section Four Animations
+			gsap.to(".section_four-title", {
+				yPercent: -10,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector(".section_four-title"),
+					start: "top center", // the default values
+					// end: "bottom top",
+					scrub: true
+				},
+			});
+			gsap.to(".section_four_center", {
+				yPercent: -20,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector(".section_four_center"),
+					start: "top center", // the default values
+					// end: "bottom top",
+					scrub: true
+				},
+			});
+			gsap.to(".section_four_side", {
+				yPercent: 30,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector(".section_four_side"),
+					start: "top center", // the default values
+					// end: "bottom top",
+					scrub: true
+				},
+			});
+			gsap.to(".section_four_side_b", {
+				yPercent: 30,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector(".section_four_side_b"),
+					start: "top center", // the default values
+					// end: "bottom top",
+					scrub: true
+				},
+			});
+
+			// Section Five Animations
+			gsap.to(".section_five-title", {
+				yPercent: 60,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector(".section_five-title"),
+					start: "top center", // the default values
+					// end: "bottom top",
+					scrub: true
+				},
+			});
+			gsap.to(".section_five-highEndRetreatsParallax", {
+				yPercent: 100,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector(".section_five-highEndRetreatsParallax"),
+					start: "top center", // the default values
+					// end: "bottom top",
+					scrub: true
+				},
+			});
+			gsap.to(".section_five-highEndRetreats", {
+				yPercent: -20,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector(".section_five-highEndRetreats"),
+					start: "top center", // the default values
+					// end: "bottom top",
+					scrub: true
+				},
+			});
+			gsap.to(".section_five-companyOffsitesParallax", {
+				yPercent: -250,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector(".section_five-companyOffsitesParallax"),
+					start: "top bottom", // the default values
+					// end: "bottom top",
+					scrub: true
+				},
+			});
+			gsap.to(".section_five-companyOffsites", {
+				yPercent: -30,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector(".section_five-companyOffsites"),
+					start: "top bottom", // the default values
+					// end: "bottom top",
+					scrub: true
+				},
+			});
+			gsap.to(".section_five-uniqueCorporateEventsBlock", {
+				yPercent: -40,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector(".section_five-uniqueCorporateEventsBlock"),
+					start: "top bottom", // the default values
+					// end: "bottom top",
+					scrub: true
+				},
+			});
+			gsap.to(".section_five-sportMusicExperienceBlock", {
+				yPercent: -40,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector(".section_five-sportMusicExperienceBlock"),
+					start: "top bottom", // the default values
+					// end: "bottom top",
+					scrub: true
+				},
+			});
+
+			// Section Five Animations
+			gsap.to(".section_six-title", {
+				yPercent: -50,
+				ease: "none",
+				scrollTrigger: {
+					trigger: element.querySelector("#section_six"),
+					start: "top top", // the default values
+					// end: "bottom top",
+					scrub: true
+				},
+			});
 		}
-		);
-		gsap.to(
-			element.querySelector(".ring-right"), {
-			xPercent: 150,
-			opacity: 0.5,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector("#section_one"),
-				start: "top top", // the default values
-				// end: "bottom top",
-				scrub: true,
-			},
-		}
-		);
-
-
-		// Section Two Animations
-		gsap.to(".section-two-head-text", {
-			yPercent: -40,
-			opacity: 1,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector(".section-two-head-text"),
-				start: "top bottom", // the default values
-				// end: "bottom top",
-				scrub: true
-			},
-		});
-		gsap.to(".section-two-anchor", {
-			yPercent: -60,
-			opacity: 1,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector(".section-two-head-text"),
-				start: "top bottom", // the default values
-				// end: "bottom top",
-				scrub: true
-			},
-		});
-		gsap.to(".section_two-top-left", {
-			yPercent: -40,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector("#section_two"),
-				start: "top bottom", // the default values
-				// end: "bottom top",
-				scrub: true
-			},
-		});
-
-
-		// Section Three Animations
-		gsap.to(".section_three_text", {
-			yPercent: 40,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector(".section_three_text"),
-				start: "top center", // the default values
-				// end: "bottom top",
-				scrub: true
-			},
-		});
-		gsap.to(".section_three-top-right", {
-			yPercent: 50,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector("#section_three"),
-				start: "top bottom", // the default values
-				// end: "bottom top",
-				scrub: true
-			},
-		});
-		gsap.to(".section_three-center-bottom", {
-			yPercent: -35,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector("#section_three"),
-				start: "top bottom", // the default values
-				// end: "bottom top",
-				scrub: true
-			},
-		});
-
-		// Section Four Animations
-		gsap.to(".section_four-title", {
-			yPercent: -10,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector(".section_four-title"),
-				start: "top center", // the default values
-				// end: "bottom top",
-				scrub: true
-			},
-		});
-		gsap.to(".section_four_center", {
-			yPercent: -20,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector(".section_four_center"),
-				start: "top center", // the default values
-				// end: "bottom top",
-				scrub: true
-			},
-		});
-		gsap.to(".section_four_side", {
-			yPercent: 30,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector(".section_four_side"),
-				start: "top center", // the default values
-				// end: "bottom top",
-				scrub: true
-			},
-		});
-		gsap.to(".section_four_side_b", {
-			yPercent: 30,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector(".section_four_side_b"),
-				start: "top center", // the default values
-				// end: "bottom top",
-				scrub: true
-			},
-		});
-
-		// Section Five Animations
-		gsap.to(".section_five-title", {
-			yPercent: 30,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector(".section_five-title"),
-				start: "top center", // the default values
-				// end: "bottom top",
-				scrub: true
-			},
-		});
-		gsap.to(".section_five-highEndRetreatsParallax", {
-			yPercent: 100,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector(".section_five-highEndRetreatsParallax"),
-				start: "top center", // the default values
-				// end: "bottom top",
-				scrub: true
-			},
-		});
-		gsap.to(".section_five-highEndRetreats", {
-			yPercent: -20,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector(".section_five-highEndRetreats"),
-				start: "top center", // the default values
-				// end: "bottom top",
-				scrub: true
-			},
-		});
-		gsap.to(".section_five-companyOffsitesParallax", {
-			yPercent: -250,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector(".section_five-companyOffsitesParallax"),
-				start: "top bottom", // the default values
-				// end: "bottom top",
-				scrub: true
-			},
-		});
-		gsap.to(".section_five-companyOffsites", {
-			yPercent: -50,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector(".section_five-companyOffsites"),
-				start: "top bottom", // the default values
-				// end: "bottom top",
-				scrub: true
-			},
-		});
-		gsap.to(".section_five-uniqueCorporateEventsBlock", {
-			yPercent: -50,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector(".section_five-uniqueCorporateEventsBlock"),
-				start: "top bottom", // the default values
-				// end: "bottom top",
-				scrub: true
-			},
-		});
-		gsap.to(".section_five-sportMusicExperienceBlock", {
-			yPercent: -50,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector(".section_five-sportMusicExperienceBlock"),
-				start: "top bottom", // the default values
-				// end: "bottom top",
-				scrub: true
-			},
-		});
-
-		// Section Five Animations
-		gsap.to(".section_six-title", {
-			yPercent: -50,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector("#section_six"),
-				start: "top top", // the default values
-				// end: "bottom top",
-				scrub: true
-			},
-		});
 
 	}, []);
 
@@ -299,21 +344,25 @@ function App() {
 			<NavbarComponent />
 
 			{/* Section One */}
-			<div id="section_one" className='parralax h-screen flex items-center justify-center
-        xl:h-[62.75rem] w-full relative'>
-				<img src={topLeftRing} className='w-[35%] absolute top-0 left-0 ring-left' alt="top-section-rings" />
-				<img src={topRightRing} className='w-[35%] absolute top-0 right-0 ring-right' alt="top-section-rings" />
-				<div className='text-center first-paragraph'>
+			<div id="section_one" className='parralax flex items-center justify-center h-screen
+        xl:h-[62.75rem] w-full relative px-5 xl:px-0'>
+				<img src={topLeftRing} className='w-[40%] xl:w-[35%] absolute top-1/2 xl:top-0 left-0 -translate-y-1/2 xl:translate-y-0 ring-left' alt="top-section-rings" />
+				<img src={topRightRing} className='w-[40%] xl:w-[35%] absolute top-1/2 xl:top-0 right-0 -translate-y-1/2 xl:translate-y-0 ring-right' alt="top-section-rings" />
+				<div className='text-center first-paragraph overflow-hidden'>
 					{/* <Fade fraction={1} delay={200}> */}
 					<HeadingOneComponent className="justify-center">
-						BESPOKE <span className='text-[3rem] xl:text-[7rem] block'>EVENTS</span>
+					<div className='inline-block text-b transition-all'>B</div><div className='inline-block text-e'>E</div><div className='hidden text-i'>I</div><div className='hidden text-z'>Z</div>
+						SPOKE
+					</HeadingOneComponent>
+					<HeadingOneComponent>
+						<span className='text-[3rem] xl:text-[7rem] block'>EVENTS</span>
 					</HeadingOneComponent>
 					{/* </Fade> */}
 				</div>
 			</div>
 
 			{/* @section 2 */}
-			<div id='section_two' className='relative z-10'>
+			<div id='section_two' className='relative z-10 px-5 xl:px-0'>
 				<div className='py-28'>
 					<h3 className='section-two-head-text font-secondary_Variable font-normal text-base xl:text-[2.5rem]
             text-[#707070] w-full xl:w-[63rem] mx-auto text-center leading-tight'>
@@ -322,11 +371,11 @@ function App() {
 					</h3>
 					<div className="section-two-anchor">
 						<AnchorLinksComponents class="flex hover:underline justify-center">
-							Explore Possibilities <img src={arrowRight} alt='arrow' className='ml-2' />
+							Explore Possibilities <img src={arrowRight} alt='arrow' className='ml-2 w-4 xl:w-8' />
 						</AnchorLinksComponents>
 					</div>
 				</div>
-				<div className='section_two-top-left absolute -bottom-64 left-10'>
+				<div className='section_two-top-left absolute -bottom-72 left-10'>
 					<img src={sectionThreeLeft} alt='side small' />
 				</div>
 			</div>
@@ -343,7 +392,7 @@ function App() {
 					<img src={sectionTwoBottom} alt='side small' />
 				</div>
 
-				<div className='section_three_text'>
+				<div className='section_three_text relative z-30'>
 					<h4 className='font-secondary_Variable font-normal text-[1.5rem] xl:text-[3.5rem] text-white
             w-full xl:w-[48rem] mx-auto text-center leading-tight'>
 						Focus on the bigger picture, <span className='block'>while we make the work invisible</span>
@@ -368,16 +417,16 @@ function App() {
 				</div>
 				<div className='block xl:flex items-start justify-between w-full xl:w-[65rem] mx-auto pb-24'>
 					<div className='section_four_side'>
-						<img src={sectionEdgeImgA} alt='sectionEdgeImgA' className='mb-14' />
-						<img src={sectionEdgeImgA} alt='sectionEdgeImgA' className='mb-14' />
+						<img src={sectionFourImageOne} alt='sectionEdgeImgA' className='mb-14' />
+						<img src={sectionFourImageTwo} alt='sectionEdgeImgA' className='mb-14' />
 					</div>
 					<div className='section_four_center xl:mt-28'>
-						<img src={sectionEdgeImgA} alt='sectionEdgeImgA' className='mb-14' />
-						<img src={sectionEdgeImgA} alt='sectionEdgeImgA' className='mb-14' />
+						<img src={sectionFourImageThree} alt='sectionEdgeImgA' className='mb-14' />
+						<img src={sectionFourImageFour} alt='sectionEdgeImgA' className='mb-14' />
 					</div>
 					<div className='section_four_side_b'>
-						<img src={sectionEdgeImgA} alt='sectionEdgeImgA' className='mb-14' />
-						<img src={sectionEdgeImgA} alt='sectionEdgeImgA' className='mb-14' />
+						<img src={sectionFourImageFive} alt='sectionEdgeImgA' className='mb-14' />
+						<img src={sectionFourImageSix} alt='sectionEdgeImgA' className='mb-14' />
 					</div>
 				</div>
 			</div>
@@ -391,9 +440,9 @@ function App() {
 						<span className='italic font-medium block'>Are Endless</span>
 					</h4>
 				</div>
-				<div className='mt-60'>
+				<div className='mt-60 px-5 xl:px-0'>
 					<div className='w-full xl:w-[80rem] relative mx-auto block xl:flex justify-start items-center'>
-						<div className='section_five-highEndRetreatsParallax absolute -top-6 -left-9 z-20'>
+						<div className='section_five-highEndRetreatsParallax absolute xl:-top-6 xl:-left-9 z-20'>
 							<img src={highEndRetreatsParallax} alt='side small' />
 						</div>
 						<div className='section_five-highEndRetreats img-section'>
@@ -423,7 +472,7 @@ function App() {
 								</span>
 							</SubHeadingOneComponent>
 						</div>
-						<div className='section_five-companyOffsitesParallax absolute -bottom-2 -right-2 z-10'>
+						<div className='section_five-companyOffsitesParallax absolute xl:-bottom-2 xl:-right-2 z-10'>
 							<img src={companyOffsitesParallax} alt='side small' />
 						</div>
 						<div className='section_five-companyOffsites img-section'>
@@ -436,7 +485,7 @@ function App() {
 						<div className='section_five-uniqueCorporateEventsBlock img-section'>
 							<img src={uniqueCorporateEventsBlock} alt="side" />
 						</div>
-						<div className='content-section w-[30rem] xl:ml-10 text-left relative z-10'>
+						<div className='content-section xl:w-[30rem] xl:ml-10 text-left relative z-10'>
 							<HeadingFourComponent className="leading-[1]">UNIQUE
 								<span className='block xl:-ml-28'>CORPORATE</span>
 								<span className='block'>EVENTS</span>
