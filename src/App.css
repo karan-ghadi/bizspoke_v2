@@ -1,0 +1,12 @@
+#section_one, .first-parallax{
+  background: url('../src/assets/images/background/background-section-one.png') no-repeat 50% 50%;
+  background-size: cover;
+}
+#section_three, .second-parallax{
+  background: url('../src/assets/images/background/background-section-three.png') no-repeat 50% 50%;
+  background-size: cover;
+}
+#section_six{
+  background: url('../src/assets/images/background/background-section-six.png') no-repeat 50% 50%;
+  background-size: cover;
+}
