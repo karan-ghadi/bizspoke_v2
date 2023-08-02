@@ -98,7 +98,7 @@ function App() {
 	}, []);
 
 	const tweenAnimation: any = () =>{
-		if (window.innerWidth > 767) {
+		if (window.innerWidth > 1024) {
 			const element: any = ref.current;
 
 			// Section One Animations
@@ -332,7 +332,7 @@ function App() {
 				},
 			});
 		}
-		if(window.innerWidth < 768){
+		if(window.innerWidth < 1024){
 			const element: any = ref.current;
 
 			// Section One Animations
@@ -483,7 +483,7 @@ function App() {
 			{/* @section 2 */}
 			<div id='section_two' className='relative z-10 px-5 xl:px-0'>
 				<div className='py-20 xl:py-36'>
-					<h3 className='section-two-head-text font-secondary_Variable font-normal text-base xl:text-[2rem]
+					<h3 className='section-two-head-text font-secondary_Variable font-normal text-base md:text-[2rem]
             text-[#707070] w-full xl:w-[63rem] mx-auto text-center leading-tight'>
 						Imagine a Team of Industry Veterans Tirelessly Curating Your Vision, Personalised and Evolving With Your Needs.
 						<span className='text-white block mt-10 text-[1.5rem] xl:text-[2rem]'>No Templates, Just Excellence.</span>
@@ -559,19 +559,19 @@ function App() {
 					</h4>
 				</div>
 				<div className='mt-32 xl:mt-60 px-5 xl:px-0 xl:w-[80rem] xl:mx-auto'>
-					<div className='w-full xl:w-[80rem] relative mx-auto block xl:flex justify-start items-center'>
+					<div className='w-full xl:w-[80rem] relative mx-auto block md:flex justify-start items-center'>
 						<div className='section_five-highEndRetreatsParallax absolute -top-4 xl:-top-6 -left-2 xl:-left-9 z-20 w-[10rem] xl:w-auto'>
 							<img src={highEndRetreatsParallax} alt='side small' />
 						</div>
-						<div className='section_five-highEndRetreats img-section xl:w-[42rem]'>
+						<div className='section_five-highEndRetreats img-section md:w-[42rem]'>
 							<img src={highEndRetreats} alt="side" />
 						</div>
-						<div className='content-section w-full xl:w-[30rem] xl:ml-10 mt-5 xl:mt-0 text-left'>
+						<div className='content-section w-full md:w-[30rem] md:ml-5 xl:ml-10 mt-5 md:mt-0 text-left'>
 							<HeadingFourComponent>
-								<span className='block xl:ml-28'>High End</span> Retreats
+								<span className='block md:ml-14 xl:ml-28'>High End</span> Retreats
 							</HeadingFourComponent>
 							<SubHeadingOneComponent>
-								<span className='block xl:ml-20 mt-4 xl:mt-8'>
+								<span className='block md:ml-10 xl:ml-20 mt-4 xl:mt-8'>
 									Network In The Lap Of Luxury With Business Leaders, Friends & Family
 								</span>
 							</SubHeadingOneComponent>
@@ -579,10 +579,10 @@ function App() {
 					</div>
 				</div>
 				<div className='mt-32 xl:mt-60 px-5 xl:px-0 xl:w-[80rem] xl:mx-auto'>
-					<div className='w-full xl:w-[80rem] relative mx-auto flex flex-col xl:flex-row justify-start items-center'>
-						<div className='order-2 xl:order-1 content-section w-full xl:w-[30rem] xl:mr-10 text-left mt-5 xl:mt-0'>
-							<HeadingFourComponent className="text-left xl:text-right xl:-mr-10 relative z-10">
-								COMPANY<span className='block xl:-mr-10'>OFFSITES</span>
+					<div className='w-full xl:w-[80rem] relative mx-auto flex flex-col md:flex-row justify-start items-center'>
+						<div className='order-2 md:order-1 content-section w-full md:w-[30rem] xl:mr-10 text-left mt-5 xl:mt-0'>
+							<HeadingFourComponent className="text-left md:text-right md:-mr-10 relative z-10">
+								COMPANY<span className='block md:-mr-10'>OFFSITES</span>
 							</HeadingFourComponent>
 							<SubHeadingOneComponent>
 								<span className='block mt-4 xl:mt-8'>
@@ -590,7 +590,7 @@ function App() {
 								</span>
 							</SubHeadingOneComponent>
 						</div>
-						<div className='section_five-companyOffsites img-section order-1 xl:order-2 xl:w-[50rem]'>
+						<div className='section_five-companyOffsites img-section order-1 md:order-2 md:w-[50rem]'>
 							<img src={companyOffsitesBlock} alt="side" />
 						</div>
 						<div className='section_five-companyOffsitesParallax absolute bottom-40 right-4 xl:-right-2 z-10 w-[10rem] xl:w-auto'>
@@ -599,11 +599,11 @@ function App() {
 					</div>
 				</div>
 				<div className='mt-32 xl:mt-60 px-5 xl:px-0 xl:w-[80rem] xl:mx-auto'>
-					<div className='w-full xl:w-[80rem] relative mx-auto flex flex-col xl:flex-row justify-start xl:items-center'>
-						<div className='section_five-uniqueCorporateEventsBlock img-section xl:w-[50rem]'>
+					<div className='w-full xl:w-[80rem] relative mx-auto flex flex-col md:flex-row justify-start xl:items-center'>
+						<div className='section_five-uniqueCorporateEventsBlock img-section md:w-[25rem] xl:w-[50rem]'>
 							<img src={uniqueCorporateEventsBlock} alt="side" />
 						</div>
-						<div className='content-section xl:w-[30rem] xl:ml-10 text-left relative z-10 mt-5 xl:mt-0'>
+						<div className='content-section xl:w-[30rem] xl:ml-10 text-left relative z-10 mt-5 xl:mt-0 md:w-[30rem] md:ml-3'>
 							<HeadingFourComponent className="leading-[1]">UNIQUE
 								<span className='block xl:-ml-28'>CORPORATE</span>
 								<span className='block'>EVENTS</span>
@@ -619,18 +619,18 @@ function App() {
 					</div>
 				</div>
 				<div className='mt-32 xl:mt-60 mb-60 px-5 xl:px-0 xl:w-[80rem] xl:mx-auto'>
-					<div className='w-full xl:w-[84rem] relative mx-auto flex flex-col xl:flex-row justify-start items-center'>
-						<div className='content-section xl:w-[30rem] text-left order-2 xl:order-1 mt-5 xl:mt-0'>
-							<HeadingFourComponent className="text-left xl:text-right relative z-10 xl:-mr-10">
+					<div className='w-full xl:w-[84rem] relative mx-auto flex flex-col md:flex-row justify-start items-center'>
+						<div className='content-section w-full md:w-[30rem] text-left order-2 md:order-1 mt-5 xl:mt-0'>
+							<HeadingFourComponent className="text-left md:text-right relative z-10 md:-mr-10">
 								SPORT & MUSIC <span className='block'>EXPERIENCES</span>
 							</HeadingFourComponent>
 							<SubHeadingOneComponent>
-								<span className='block mt-4 xl:mt-8'>
+								<span className='block mt-4 md:mt-8 md:mr-4 xl:mr-0 text-right xl:text-left'>
 									Enjoy All-Access At Some Of The Most Sought After Global Events.
 								</span>
 							</SubHeadingOneComponent>
 						</div>
-						<div className='section_five-sportMusicExperienceBlock img-section order:1 xl:order-2 xl:w-[50rem]'>
+						<div className='section_five-sportMusicExperienceBlock img-section order:1 md:order-2 md:w-[25rem] xl:w-[50rem]'>
 							<img src={sportMusicExperienceBlock} alt="side" />
 						</div>
 					</div>
