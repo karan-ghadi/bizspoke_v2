@@ -144,7 +144,6 @@ function App() {
 			// Section Two Animations
 			gsap.to(".section-two-head-text", {
 				yPercent: -40,
-				opacity: 1,
 				ease: "none",
 				scrollTrigger: {
 					trigger: element.querySelector(".section-two-head-text"),
@@ -154,8 +153,7 @@ function App() {
 				},
 			});
 			gsap.to(".section-two-anchor", {
-				yPercent: -60,
-				opacity: 1,
+				yPercent: -80,
 				ease: "none",
 				scrollTrigger: {
 					trigger: element.querySelector(".section-two-head-text"),
@@ -165,7 +163,7 @@ function App() {
 				},
 			});
 			gsap.to(".section_two-top-left", {
-				yPercent: -60,
+				yPercent: -100,
 				ease: "none",
 				scrollTrigger: {
 					trigger: element.querySelector("#section_two"),
@@ -188,7 +186,7 @@ function App() {
 				},
 			});
 			gsap.to(".section_three-top-right", {
-				yPercent: 100,
+				yPercent: 150,
 				ease: "none",
 				scrollTrigger: {
 					trigger: element.querySelector("#section_three"),
@@ -198,7 +196,7 @@ function App() {
 				},
 			});
 			gsap.to(".section_three-center-bottom", {
-				yPercent: -35,
+				yPercent: -75,
 				ease: "none",
 				scrollTrigger: {
 					trigger: element.querySelector("#section_three"),
@@ -262,7 +260,7 @@ function App() {
 				},
 			});
 			gsap.to(".section_five-highEndRetreatsParallax", {
-				yPercent: 100,
+				yPercent: 70,
 				ease: "none",
 				scrollTrigger: {
 					trigger: element.querySelector(".section_five-highEndRetreatsParallax"),
@@ -272,7 +270,7 @@ function App() {
 				},
 			});
 			gsap.to(".section_five-highEndRetreats", {
-				yPercent: -20,
+				yPercent: -10,
 				ease: "none",
 				scrollTrigger: {
 					trigger: element.querySelector(".section_five-highEndRetreats"),
@@ -282,7 +280,7 @@ function App() {
 				},
 			});
 			gsap.to(".section_five-companyOffsitesParallax", {
-				yPercent: -250,
+				yPercent: -70,
 				ease: "none",
 				scrollTrigger: {
 					trigger: element.querySelector(".section_five-companyOffsitesParallax"),
@@ -292,7 +290,7 @@ function App() {
 				},
 			});
 			gsap.to(".section_five-companyOffsites", {
-				yPercent: -30,
+				yPercent: -10,
 				ease: "none",
 				scrollTrigger: {
 					trigger: element.querySelector(".section_five-companyOffsites"),
@@ -302,7 +300,7 @@ function App() {
 				},
 			});
 			gsap.to(".section_five-uniqueCorporateEventsBlock", {
-				yPercent: -40,
+				yPercent: -10,
 				ease: "none",
 				scrollTrigger: {
 					trigger: element.querySelector(".section_five-uniqueCorporateEventsBlock"),
@@ -473,11 +471,11 @@ function App() {
 				<img src={topRightRing} className='w-[40%] xl:w-[35%] absolute top-1/2 xl:top-0 right-0 -translate-y-1/2 xl:translate-y-0 ring-right' alt="top-section-rings" />
 				<div className='text-center first-paragraph overflow-hidden'>
 					<HeadingOneComponent className="justify-center">
-					<div className='inline-block text-b transition-all'>B</div><div className='inline-block text-e'>E</div><div className='hidden text-i'>I</div><div className='hidden text-z'>Z</div>
+						<div className='inline-block text-b transition-all'>B</div><div className='inline-block text-e'>E</div><div className='hidden text-i'>I</div><div className='hidden text-z'>Z</div>
 						SPOKE
 					</HeadingOneComponent>
 					<HeadingOneComponent>
-						<span className='text-[3rem] xl:text-[7rem] block'>EVENTS</span>
+						<span className='text-[2rem] xl:text-[5.5rem] block'>EVENTS</span>
 					</HeadingOneComponent>
 				</div>
 			</div>
@@ -485,10 +483,10 @@ function App() {
 			{/* @section 2 */}
 			<div id='section_two' className='relative z-10 px-5 xl:px-0'>
 				<div className='py-20 xl:py-36'>
-					<h3 className='section-two-head-text font-secondary_Variable font-normal text-base xl:text-[2.5rem]
+					<h3 className='section-two-head-text font-secondary_Variable font-normal text-base xl:text-[2rem]
             text-[#707070] w-full xl:w-[63rem] mx-auto text-center leading-tight'>
 						Imagine a Team of Industry Veterans Tirelessly Curating Your Vision, Personalised and Evolving With Your Needs.
-						<span className='text-white block mt-10 text-2xl xl:text-5xl'>No Templates, Just Excellence.</span>
+						<span className='text-white block mt-10 text-[1.5rem] xl:text-[2rem]'>No Templates, Just Excellence.</span>
 					</h3>
 					<div className="section-two-anchor">
 						<AnchorLinksComponents class="flex hover:underline justify-center">
@@ -496,7 +494,7 @@ function App() {
 						</AnchorLinksComponents>
 					</div>
 				</div>
-				<div className='section_two-top-left absolute -bottom-60 left-10 hidden xl:block w-[30rem]'>
+				<div className='section_two-top-left absolute -bottom-60 left-10 hidden xl:block w-[20rem]'>
 					<img src={sectionThreeLeft} alt='side small' />
 				</div>
 			</div>
@@ -507,15 +505,15 @@ function App() {
 				<div className='section_two-top-left absolute top-28 left-9 xl:left-10 block xl:hidden w-[70%] xl:w-auto'>
 					<img src={sectionThreeLeft} alt='side small' />
 				</div>
-				<div className='section_three-top-right absolute bottom-48 xl:bottom-auto xl:-top-16 right-9 xl:right-10 z-10 w-[70%] xl:w-[25rem]'>
+				<div className='section_three-top-right absolute bottom-48 xl:bottom-auto xl:-top-16 right-9 xl:right-10 z-10 w-[70%] xl:w-[20rem]'>
 					<img src={sectionThreeRight} alt='side small' />
 				</div>
-				<div className='hidden xl:grid section_three-center-bottom absolute -bottom-16 left-0 right-0 place-items-center z-10 w-[25rem] xl:mx-auto'>
+				<div className='hidden xl:grid section_three-center-bottom absolute -bottom-16 left-0 right-0 place-items-center z-10 w-[20rem] xl:mx-auto'>
 					<img src={sectionTwoBottom} alt='side small' />
 				</div>
 
 				<div className='section_three_text relative z-30'>
-					<h4 className='font-secondary_Variable font-normal text-[1.5rem] xl:text-[3.5rem] text-white
+					<h4 className='font-secondary_Variable font-normal text-[1.5rem] xl:text-[3rem] text-white
             w-full xl:w-[48rem] mx-auto text-center leading-tight'>
 						Focus on the bigger picture, <span className='block'>while we make the work <span id="invisible-text">invisible</span></span>
 					</h4>
@@ -528,26 +526,26 @@ function App() {
 			{/* @Section 4 */}
 			<div id='section_four' className='w-full text-center'>
 				<div className="section_four-title w-full xl:w-[60rem] mx-auto py-10 xl:py-24 mt-16 mb-8">
-					<h4 className='font-secondary_Variable font-normal text-[2rem] xl:text-[6rem] text-white w-full xl:w-[48rem] mx-auto text-center leading-tight mb-3'>
+					<h4 className='font-secondary_Variable font-normal text-[2rem] xl:text-[5rem] text-white w-full xl:w-[48rem] mx-auto text-center leading-[1] mb-3'>
 						Relationships <span className='text-white block'>that give us an edge</span>
 					</h4>
-					<p className='font-primary_Variable font-normal text-base xl:text-[2rem] text-gray mx-auto text-center leading-tight'>
+					<p className='font-primary_Variable font-normal text-base xl:text-[1.5rem] text-gray mx-auto text-center leading-tight'>
 						Built over decades, our trusted partnerships with leading curators & destination management companies
 						give us a global reach to bring alive whatever you imagine, whenever you want.
 					</p>
 				</div>
 				<div className='block xl:flex items-start justify-between w-full xl:w-[65rem] mx-auto pb-24'>
-					<div className='section_four_side'>
-						<img src={sectionFourImageOne} alt='sectionEdgeImgA' className='mb-14 mx-auto' />
-						<img src={sectionFourImageTwo} alt='sectionEdgeImgA' className='mb-14 mx-auto' />
+					<div className='section_four_side flex xl:block justify-center items-center'>
+						<img src={sectionFourImageOne} alt='sectionEdgeImgA' className='mb-14 mx-auto w-1/3 xl:w-auto' />
+						<img src={sectionFourImageTwo} alt='sectionEdgeImgA' className='mb-14 mx-auto ml-4 xl:ml-auto w-1/3 xl:w-auto' />
 					</div>
-					<div className='section_four_center xl:mt-28'>
-						<img src={sectionFourImageThree} alt='sectionEdgeImgA' className='mb-14 mx-auto' />
-						<img src={sectionFourImageFour} alt='sectionEdgeImgA' className='mb-14 mx-auto' />
+					<div className='section_four_center xl:mt-28 flex xl:block justify-center items-center'>
+						<img src={sectionFourImageThree} alt='sectionEdgeImgA' className='mb-14 mx-auto w-1/3 xl:w-auto' />
+						<img src={sectionFourImageFour} alt='sectionEdgeImgA' className='mb-14 mx-auto ml-4 xl:ml-auto w-1/3 xl:w-auto' />
 					</div>
-					<div className='section_four_side_b'>
-						<img src={sectionFourImageFive} alt='sectionEdgeImgA' className='mb-14 mx-auto' />
-						<img src={sectionFourImageSix} alt='sectionEdgeImgA' className='mb-14 mx-auto' />
+					<div className='section_four_side_b flex xl:block justify-center items-center'>
+						<img src={sectionFourImageFive} alt='sectionEdgeImgA' className='mb-14 mx-auto w-1/3 xl:w-auto' />
+						<img src={sectionFourImageSix} alt='sectionEdgeImgA' className='mb-14 ml-4 xl:ml-auto mx-auto w-1/3 xl:w-auto' />
 					</div>
 				</div>
 			</div>
@@ -555,7 +553,7 @@ function App() {
 			{/* @section 5 */}
 			<div id="section_five" className='font-secondary_Variable font-normal text-[6rem] text-white mx-auto text-center leading-tight xl:py-9'>
 				<div className='section_five-title w-full xl:w-[56rem] mx-auto'>
-					<h4 className='text-[2rem] xl:text-[4.5rem] text-[#E4E4E4] font-secondary_Variable font-bold'>
+					<h4 className='text-[2rem] xl:text-[4rem] text-[#E4E4E4] font-secondary_Variable font-bold'>
 						Bring Your Vision Alive, Afterall The Possibilities
 						<span className='italic font-medium block'>Are Endless</span>
 					</h4>
@@ -662,7 +660,7 @@ function App() {
 						<img className="object-cover h-[51.6875rem] w-[44.625rem]" src={contactImage} alt="" />
 					</div>
 					<div className="form-container w-full xl:w-1/2">
-						<h3 className='font-secondary_Variable font-normal text-[2rem] xl:text-[3rem] text-white leading-tight uppercase mb-10'>
+						<h3 className='font-secondary_Variable font-normal text-[2rem] xl:text-[2.5rem] text-white leading-tight uppercase mb-10'>
 							Contact Us
 						</h3>
 						<form className='w-full'>
