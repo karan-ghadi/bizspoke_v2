@@ -22,7 +22,8 @@ export const NavbarComponent = () => {
 							<img className="h-8 w-auto" src={logo} alt="logo" />
 						</a>
 					</div>
-					<div className="flex lg:hidden text-white">
+					{/* Nav mobile button */}
+					{/* <div className="flex lg:hidden text-white">
 						<button
 							type="button"
 							className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400"
@@ -31,14 +32,15 @@ export const NavbarComponent = () => {
 							<span className="sr-only">Open main menu</span>
 							<Bars3Icon className="h-6 w-6" aria-hidden="true" />
 						</button>
-					</div>
-					<div className="hidden lg:flex lg:gap-x-12">
+					</div> */}
+					{/* Nav Items */}
+					{/* <div className="hidden lg:flex lg:gap-x-12">
 						{navigation.map((item) => (
-							<a key={item.name} href={item.href} className="font-primary_Medium text-2xl text-white">
+							<a key={item.name} href={item.href} className="font-primary_Medium text-base text-white">
 								{item.name}
 							</a>
 						))}
-					</div>
+					</div> */}
 				</nav>
 				<Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
 					<div className="fixed inset-0 z-10" />
@@ -68,7 +70,7 @@ export const NavbarComponent = () => {
 										<a
 											key={item.name}
 											href={item.href}
-											className="-mx-3 block rounded-lg px-3 py-2 font-primary_Medium text-2xl leading-7 text-white"
+											className="-mx-3 block rounded-lg px-3 py-2 font-primary_Medium text-base leading-7 text-white"
 										>
 											{item.name}
 										</a>

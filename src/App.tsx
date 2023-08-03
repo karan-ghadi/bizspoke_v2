@@ -39,6 +39,9 @@ import sectionFourImageThree from './../src/assets/images/s4-image-three.jpg';
 import sectionFourImageFour from './../src/assets/images/s4-image-four.jpg';
 import sectionFourImageFive from './../src/assets/images/s4-image-five.jpg';
 import sectionFourImageSix from './../src/assets/images/s4-image-six.jpg';
+import sectionFourImageSeven from './../src/assets/images/s4-image-seven.jpg';
+import sectionFourImageEight from './../src/assets/images/s4-image-eight.jpg';
+import FooterComponent from './components/footer/FooterComponent';
 
 
 
@@ -67,8 +70,8 @@ function App() {
 			.timeline()
 			.to(
 				element.querySelector(".text-e"), {
-				opacity:0,
-				display:'none',
+				opacity: 0,
+				display: 'none',
 				ease: "none",
 				yoyo: true,
 				delay: 1,
@@ -80,24 +83,24 @@ function App() {
 				opacity: 0,
 			}, {
 				opacity: 1,
-				display:'inline-block',
+				display: 'inline-block',
 				ease: "none",
 				duration: 0.3
 			}
 			)
 			.fromTo(
 				element.querySelector(".text-z"), {
-					opacity: 0,
+				opacity: 0,
 			}, {
 				opacity: 1,
-				display:'inline-block',
+				display: 'inline-block',
 				ease: "none",
 				duration: 0.3
 			}
 			);
 	}, []);
 
-	const tweenAnimation: any = () =>{
+	const tweenAnimation: any = () => {
 		if (window.innerWidth > 1024) {
 			const element: any = ref.current;
 
@@ -332,7 +335,7 @@ function App() {
 				},
 			});
 		}
-		if(window.innerWidth < 1024){
+		if (window.innerWidth < 1024) {
 			const element: any = ref.current;
 
 			// Section One Animations
@@ -466,7 +469,7 @@ function App() {
 			<NavbarComponent />
 
 			{/* Section One */}
-			<div id="section_one" className='parralax flex items-center justify-center h-screen xl:h-[62.75rem] w-full relative px-5 xl:px-0'>
+			<div id="section_one" className='parralax flex items-center justify-center h-screen xl:h-screen w-full relative px-5 xl:px-0'>
 				<img src={topLeftRing} className='w-[40%] xl:w-[35%] absolute top-1/2 xl:top-0 left-0 -translate-y-1/2 xl:translate-y-0 ring-left' alt="top-section-rings" />
 				<img src={topRightRing} className='w-[40%] xl:w-[35%] absolute top-1/2 xl:top-0 right-0 -translate-y-1/2 xl:translate-y-0 ring-right' alt="top-section-rings" />
 				<div className='text-center first-paragraph overflow-hidden'>
@@ -481,7 +484,7 @@ function App() {
 			</div>
 
 			{/* @section 2 */}
-			<div id='section_two' className='relative z-10 px-5 xl:px-0'>
+			<div id='section_two' className='relative z-10 px-5 xl:px-0 h-screen flex justify-center items-center'>
 				<div className='py-20 xl:py-36'>
 					<h3 className='section-two-head-text font-secondary_Variable font-normal text-base md:text-[2rem]
             text-[#707070] w-full xl:w-[63rem] mx-auto text-center leading-tight'>
@@ -525,7 +528,7 @@ function App() {
 
 			{/* @Section 4 */}
 			<div id='section_four' className='w-full text-center'>
-				<div className="section_four-title w-full xl:w-[60rem] mx-auto py-10 xl:py-24 mt-16 mb-8">
+				<div className="section_four-title w-full xl:w-[60rem] mx-auto py-10 xl:py-24 mt-16">
 					<h4 className='font-secondary_Variable font-normal text-[2rem] xl:text-[5rem] text-white w-full xl:w-[48rem] mx-auto text-center leading-[1] mb-3'>
 						Relationships <span className='text-white block'>that give us an edge</span>
 					</h4>
@@ -534,18 +537,22 @@ function App() {
 						give us a global reach to bring alive whatever you imagine, whenever you want.
 					</p>
 				</div>
-				<div className='block xl:flex items-start justify-between w-full xl:w-[65rem] mx-auto pb-24'>
+				<div className='block xl:flex items-start justify-between w-full xl:w-[65rem] mx-auto pb-40'>
 					<div className='section_four_side flex xl:block justify-center items-center'>
-						<img src={sectionFourImageOne} alt='sectionEdgeImgA' className='mb-14 mx-auto w-1/3 xl:w-auto' />
-						<img src={sectionFourImageTwo} alt='sectionEdgeImgA' className='mb-14 mx-auto ml-4 xl:ml-auto w-1/3 xl:w-auto' />
+						<img src={sectionFourImageOne} alt='sectionEdgeImgA' className='mb-14 mx-auto w-1/3 xl:w-[12rem]' />
+						<img src={sectionFourImageTwo} alt='sectionEdgeImgA' className='mb-14 mx-auto ml-4 xl:ml-auto w-1/3 xl:w-[12rem]' />
 					</div>
 					<div className='section_four_center xl:mt-28 flex xl:block justify-center items-center'>
-						<img src={sectionFourImageThree} alt='sectionEdgeImgA' className='mb-14 mx-auto w-1/3 xl:w-auto' />
-						<img src={sectionFourImageFour} alt='sectionEdgeImgA' className='mb-14 mx-auto ml-4 xl:ml-auto w-1/3 xl:w-auto' />
+						<img src={sectionFourImageThree} alt='sectionEdgeImgA' className='mb-14 mx-auto w-1/3 xl:w-[12rem]' />
+						<img src={sectionFourImageFour} alt='sectionEdgeImgA' className='mb-14 mx-auto ml-4 xl:ml-auto w-1/3 xl:w-[12rem]' />
 					</div>
 					<div className='section_four_side_b flex xl:block justify-center items-center'>
-						<img src={sectionFourImageFive} alt='sectionEdgeImgA' className='mb-14 mx-auto w-1/3 xl:w-auto' />
-						<img src={sectionFourImageSix} alt='sectionEdgeImgA' className='mb-14 ml-4 xl:ml-auto mx-auto w-1/3 xl:w-auto' />
+						<img src={sectionFourImageFive} alt='sectionEdgeImgA' className='mb-14 mx-auto w-1/3 xl:w-[12rem]' />
+						<img src={sectionFourImageSix} alt='sectionEdgeImgA' className='mb-14 ml-4 xl:ml-auto mx-auto w-1/3 xl:w-[12rem]' />
+					</div>
+					<div className='section_four_center xl:mt-28 flex xl:block justify-center items-center'>
+						<img src={sectionFourImageSeven} alt='sectionEdgeImgA' className='mb-14 mx-auto w-1/3 xl:w-[12rem]' />
+						<img src={sectionFourImageEight} alt='sectionEdgeImgA' className='mb-14 mx-auto ml-4 xl:ml-auto w-1/3 xl:w-[12rem]' />
 					</div>
 				</div>
 			</div>
@@ -553,12 +560,12 @@ function App() {
 			{/* @section 5 */}
 			<div id="section_five" className='font-secondary_Variable font-normal text-[6rem] text-white mx-auto text-center leading-tight xl:py-9'>
 				<div className='section_five-title w-full xl:w-[56rem] mx-auto'>
-					<h4 className='text-[2rem] xl:text-[4rem] text-[#E4E4E4] font-secondary_Variable font-bold'>
-						Bring Your Vision Alive, Afterall The Possibilities
+					<h4 className='text-[2rem] xl:text-[3rem] text-[#E4E4E4] font-secondary_Variable font-bold'>
+						Bring Your Vision Alive, <br />Afterall The Possibilities
 						<span className='italic font-medium block'>Are Endless</span>
 					</h4>
 				</div>
-				<div className='mt-32 xl:mt-60 px-5 xl:px-0 xl:w-[80rem] xl:mx-auto'>
+				<div className='mt-32 xl:mt-80 px-5 xl:px-0 xl:w-[80rem] xl:mx-auto'>
 					<div className='w-full xl:w-[80rem] relative mx-auto block md:flex justify-start items-center'>
 						<div className='section_five-highEndRetreatsParallax absolute -top-4 xl:-top-6 -left-2 xl:-left-9 z-20 w-[10rem] xl:w-auto'>
 							<img src={highEndRetreatsParallax} alt='side small' />
@@ -585,7 +592,7 @@ function App() {
 								COMPANY<span className='block md:-mr-10'>OFFSITES</span>
 							</HeadingFourComponent>
 							<SubHeadingOneComponent>
-								<span className='block mt-4 xl:mt-8'>
+								<span className='block mt-4 xl:mt-8 xl:w-[70%] xl:mr-10'>
 									Recharge And Inspire Teams As You Continue To Scale Your Business
 								</span>
 							</SubHeadingOneComponent>
@@ -594,7 +601,7 @@ function App() {
 							<img src={companyOffsitesBlock} alt="side" />
 						</div>
 						<div className='section_five-companyOffsitesParallax absolute bottom-40 right-4 xl:-right-2 z-10 w-[10rem] xl:w-auto'>
-							<img src={companyOffsitesParallax} alt='side small'/>
+							<img src={companyOffsitesParallax} alt='side small' />
 						</div>
 					</div>
 				</div>
@@ -638,12 +645,11 @@ function App() {
 			</div>
 
 			{/* @section */}
-			<div id="section_six" className='parralax h-screen w-full flex text-center items-end
-        justify-center section-bg'>
+			<div id="section_six" className='parralax h-screen w-full flex text-center items-end justify-center section-bg'>
 				<div className='section_six-title text-center w-[70.375rem] mb-8'>
-					<HeadingFourComponent>
+					<h4 className="font-secondary_Bold text-[2rem] xl:text-[3rem] text-black-100 leading-tight">
 						CURATE YOUR NEXT EXPERIENCE, WE'RE READY WHEN YOU ARE.
-					</HeadingFourComponent>
+					</h4>
 					<AnchorLinksComponents class="text-center block justify-center">
 						Start a conversation
 						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" className='mx-auto'>
@@ -654,12 +660,12 @@ function App() {
 			</div>
 
 			{/* @section */}
-			<div id="section_seven" className='px-8 py-[10rem]'>
+			<div id="section_seven" className='px-8'>
 				<div className="flex gap-8">
 					<div className="image-container w-1/2 hidden xl:block">
 						<img className="object-cover h-[51.6875rem] w-[44.625rem]" src={contactImage} alt="" />
 					</div>
-					<div className="form-container w-full xl:w-1/2">
+					<div className="form-container w-full xl:w-[40%] xl:mx-auto">
 						<h3 className='font-secondary_Variable font-normal text-[2rem] xl:text-[2.5rem] text-white leading-tight uppercase mb-10'>
 							Contact Us
 						</h3>
@@ -770,7 +776,7 @@ function App() {
 							</div>
 							<div>
 								<button type="button"
-									className="block w-full rounded-md bg-black px-5 py-3 text-[1.5rem] font-semibold text-white border"
+									className="block w-full rounded-md bg-black px-5 py-3 text-[1rem] font-semibold text-white border"
 								>
 									Submit
 								</button>
@@ -780,6 +786,8 @@ function App() {
 					</div>
 				</div>
 			</div>
+
+			<FooterComponent />
 
 		</div>
 	);

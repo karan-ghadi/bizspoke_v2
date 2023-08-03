@@ -6,8 +6,9 @@ h1{
   background-size: cover;
 }
 #section_three, .second-parallax{
-  background: url('../src/assets/images/background/background-section-three.png') no-repeat 50% 50%;
-  background-size: cover;
+  /* background: url('../src/assets/images/background/background-section-three.png') no-repeat 50% 50%;
+  background-size: cover; */
+  background-color: #000;
 }
 #section_six{
   background: url('../src/assets/images/background/background-section-six.png') no-repeat 50% 50%;
