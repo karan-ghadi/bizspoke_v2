@@ -645,7 +645,7 @@ function App() {
 			</div>
 
 			{/* @section */}
-			<div id="section_six" className='parralax h-screen w-full flex text-center items-end justify-center section-bg'>
+			<div id="section_six" className='parralax h-screen w-full flex text-center items-center justify-center section-bg '>
 				<div className='section_six-title text-center w-[70.375rem] mb-8'>
 					<h4 className="font-secondary_Bold text-[2rem] xl:text-[3rem] text-black-100 leading-tight">
 						CURATE YOUR NEXT EXPERIENCE, WE'RE READY WHEN YOU ARE.
@@ -660,7 +660,7 @@ function App() {
 			</div>
 
 			{/* @section */}
-			<div id="section_seven" className='px-8'>
+			<div id="section_seven" className='px-8 pt-[10rem]'>
 				<div className="flex gap-8">
 					<div className="image-container w-1/2 hidden xl:block">
 						<img className="object-cover h-[51.6875rem] w-[44.625rem]" src={contactImage} alt="" />
